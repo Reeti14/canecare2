@@ -37,7 +37,9 @@ export default function Navbar() {
 
           <Link href="#">How It Works</Link>
 
-          <Link href="#">Contact</Link>
+          <Link href="/chat">AI Coach</Link>
+
+          <Link href="#advisory">Advisory</Link>
         </nav>
 
         <div className="flex gap-4">
