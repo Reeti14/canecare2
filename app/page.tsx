@@ -568,8 +568,8 @@ export default function HomePage() {
 
               <p style={{ fontSize: 16.5, color: "#3d5a3d", lineHeight: 1.75, marginBottom: 32, maxWidth: 540 }}>
                 {hi
-                  ? "CANECARE उन्नत मोबाइलनेटवी2 मॉडल से सेकंडों में गन्ने की पत्तियों के रोगों (रेड रोट, रस्ट, मोज़ेक, पीली पत्ती) की पहचान करता है और जेमिनी AI कोच से उपचार सलाह प्रदान करता है।"
-                  : "Upload or capture a sugarcane leaf photo. Our dedicated MobileNetV2 neural model delivers instant sub-second diagnostic classification, paired with full-page Gemini AI agronomical guidance."}
+                  ? "CANECARE उन्नत EfficientNet-B3 मॉडल से सेकंडों में गन्ने की पत्तियों के रोगों (रेड रोट, रस्ट, मोज़ेक, पीली पत्ती) की पहचान करता है और जेमिनी AI कोच से उपचार सलाह प्रदान करता है।"
+                  : "Upload or capture a sugarcane leaf photo. Our dedicated EfficientNet-B3 neural model delivers instant sub-second diagnostic classification, paired with full-page Gemini AI agronomical guidance."}
               </p>
 
               {/* Action Buttons */}
@@ -623,7 +623,7 @@ export default function HomePage() {
                   {/* Scanner overlay line & crosshairs */}
                   <div style={{ position: "absolute", top: 20, left: 20, right: 20, bottom: 20, border: "2px dashed rgba(76,175,80,0.8)", borderRadius: 12, pointerEvents: "none" }} />
                   <div style={{ position: "absolute", bottom: 12, left: 16, background: "rgba(0,0,0,0.75)", color: "#a5d6a7", padding: "4px 10px", borderRadius: 8, fontSize: 11.5, fontWeight: 600 }}>
-                    Target: Sugarcane Midrib • 224x224 RGB
+                    Target: Sugarcane Midrib • 300x300 RGB
                   </div>
                 </div>
 
@@ -884,8 +884,8 @@ export default function HomePage() {
                 ico: "⚙️",
                 title_en: "Neural Preprocessing",
                 title_hi: "मॉडल प्री-प्रोसेसिंग",
-                desc_en: "Image is scaled to 224x224 RGB float32 pixels and passed to our trained MobileNetV2 backend.",
-                desc_hi: "इमेज का 224x224 पिक्सल पर स्केलिंग होकर डीप लर्निंग मॉडल में स्वतः विश्लेषण होता है।",
+                desc_en: "Image is scaled to 300x300 RGB float32 pixels and passed to our trained EfficientNet-B3 backend.",
+                desc_hi: "इमेज का 300x300 पिक्सल पर स्केलिंग होकर डीप लर्निंग मॉडल में स्वतः विश्लेषण होता है।",
               },
               {
                 step: "03",
@@ -1306,7 +1306,7 @@ export default function HomePage() {
                   <span>{hi ? "पत्ती का डीप लर्निंग विश्लेषण प्रगति पर है..." : "Neural Network Analyzing Leaf Features..."}</span>
                 </div>
                 <div style={{ fontSize: 12, color: "#5a805a" }}>
-                  {hi ? "MobileNetV2 मॉडल • 5 रोग श्रेणियों में मिलान हो रहा है" : "Running MobileNetV2 • Matching 5 Sugarcane Disease Signatures"}
+                  {hi ? "EfficientNet-B3 मॉडल • 5 रोग श्रेणियों में मिलान हो रहा है" : "Running EfficientNet-B3 • Matching 5 Sugarcane Disease Signatures"}
                 </div>
               </div>
             )}
