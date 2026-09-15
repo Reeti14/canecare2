@@ -1,7 +1,7 @@
 {
-    "0": "Healthy",
-    "1": "Mosaic",
-    "2": "RedRot",
-    "3": "Rust",
-    "4": "Yellow"
+    "Healthy": 0,
+    "Mosaic": 1,
+    "RedRot": 2,
+    "Rust": 3,
+    "Yellow": 4
 }
