@@ -101,8 +101,8 @@ async function callWithRetry(
         temperature: 0.7,
         maxOutputTokens: 1024,
       };
-      // Only attach thinkingConfig to models that support it (e.g. 3.7)
-      if (model.includes('3.7')) {
+      // Attach thinkingConfig to models that support thinkingBudget
+      if (model.includes('3.6') || model.includes('3.7') || model.includes('2.5')) {
         config.thinkingConfig = { thinkingBudget: 0 };
       }
 

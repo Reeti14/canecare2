@@ -1,7 +1,6 @@
 export const runtime = 'nodejs';
 
 import { NextRequest, NextResponse } from 'next/server';
-import { predictWithSavedModel } from '@/lib/model';
 
 export async function POST(req: NextRequest) {
     try {
@@ -11,14 +10,23 @@ export async function POST(req: NextRequest) {
             return NextResponse.json({ error: 'No image file provided in field "image"' }, { status: 400 });
         }
 
-        const buffer = Buffer.from(await file.arrayBuffer());
-        const result = await predictWithSavedModel(buffer);
+        // Send to Render backend
+        const renderFormData = new FormData();
+        renderFormData.append('file', file);
 
-        if (result.error) {
-            return NextResponse.json({ error: result.error }, { status: 500 });
+        const response = await fetch('https://canecare-backend.onrender.com/predict', {
+            method: 'POST',
+            body: renderFormData,
+        });
+
+        if (!response.ok) {
+            const error = await response.text();
+            return NextResponse.json({ error }, { status: 500 });
         }
 
+        const result = await response.json();
         return NextResponse.json(result);
+
     } catch (e: any) {
         console.error('Prediction API Error:', e);
         return NextResponse.json({ error: e.message || 'Prediction failed' }, { status: 500 });
